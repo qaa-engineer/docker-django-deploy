@@ -14,7 +14,8 @@ Docker - это мини виртуальная машина с минимизи
 
 Давайте составим туториал, как задеплоить Django c помощью Docker.
 
-1. Скачайте десктопную версию докера для вашей системы - https://www.docker.com/products/docker-desktop. Установите эту программу, пройдите регистрацию на Docker Hub.
+1. Установите docker-compose
+        sudo apt install docker-compose
 
 2. Обратите внимание на структуру вашего проекта, т.к. это важно при указании путей до файлов в файле Dockerfile, например 
 структура моего проекта выглядит так:
@@ -96,11 +97,11 @@ Docker - это мини виртуальная машина с минимизи
         
 6. Создайте свой образ Docker.
 
-        docker build -t simple-django-on-docker -f Dockerfile .
+        sudo docker build -t simple-django-on-docker -f Dockerfile .
     
 7. Запустите свой контейнер.
 
-        docker run -it -p 80:8888 simple-django-on-docker
+        sudo docker run -it -p 80:8888 simple-django-on-docker
     
 8. Теперь откройте http://localhost. Используйте Ctrl + C, чтобы отменить запуск контейнера.
 
